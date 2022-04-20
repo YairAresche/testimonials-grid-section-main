@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    body{
+        font-size: 13px;
+        font-weight: 500;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        background-color: hsl(210, 46%, 95%);
+        main{
+            width: 88%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3rem 0;
+            .container{
+                display: grid;
+                gap: 2em;
+                .card{
+                    border-radius: .5em;
+                    padding: 2em;
+                    box-shadow: #cfcfcf 1px 20px 50px 0px;
+                    img{
+                        border-radius: 3em;
+                        width: 3em;
+                        margin-right: 1.5em;
+                    }
+                    .user{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1em;
+                        div{
+                            display: flex;
+                            flex-direction: column;
+                            h4{
+                                color: hsl(0, 0%, 81%);
+                            }
+                            p{
+                                color: hsl(0, 0%, 81%);
+                                opacity: .5;
+                            }
+                        }
+                    }
+                    .comments{
+                        h3{
+                            color: hsl(0, 0%, 100%);
+                            margin-bottom: 1em;
+                            line-height: 1.5em;
+                        }
+                        p{
+                            color: hsl(0, 0%, 81%);
+                            opacity: .7;
+                            line-height: 1.4em;
+                        }
+                    }
+                }
+                .card:nth-child(1){
+                    background-color: hsl(263, 55%, 52%);
+                    background-image: url("/images/bg-pattern-quotation.svg");
+                    background-repeat: no-repeat;
+                    background-position: top right 2em;
+                }
+                .card:nth-child(2){
+                    background-color: hsl(217, 19%, 35%);
+    
+                }
+                .card:nth-child(3){
+                    background-color: hsl(0, 0%, 100%);
+                }
+                .card:nth-child(4){
+                    background-color: hsl(219, 29%, 14%);
+                }
+                .card:nth-child(5){
+                    background-color: hsl(0, 0%, 100%);
+                }
+                .card:nth-child(3), .card:nth-child(5){
+                    .user{
+                        div{
+                            h4{
+                                color: hsl(217, 19%, 35%);
+                            }
+                            p{
+                                color: hsl(217, 19%, 35%);
+                                opacity: .5;
+                            }
+                        }
+                    }
+                    .comments{
+                        h3{
+                            color: hsl(217, 19%, 35%);
+                        }
+                        p{
+                            color: hsl(217, 19%, 35%);
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    *{
+        body{
+            height: 100vh;
+            main{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                width: 80%;
+                max-width: 1440px;
+                padding: 0;
+                .container{
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: 1fr 1fr;
+                    .card{
+                        .user{
+                            img{
+                                width: calc(2em + 1vw);
+                            }
+                            div{
+                                h4{
+                                    font-size: calc(.45em + .5vw);
+                                }
+                                p{
+                                    font-size: calc(.4em + .5vw);
+                                }
+                            }
+                        }
+                        .comments{
+                            h3{
+                                font-size: calc(.6em + 1vw);
+                                line-height: 1.2em;
+                            }
+                            p{
+                                font-size: calc(.01em + 1vw);
+                            }
+                        }
+                    }
+                    .card-1{
+                        grid-area: 1 / 1 / 2 / 3; // r-start / c-start / r-end / c-end
+                    }
+                    .card-4{
+                        grid-column: 2 / 4;
+                    }
+                    .card-5{
+                        grid-area: 1 / 4 / 3 / 5;
+                    }
+                }
+            }
+        }
+    }
+}
